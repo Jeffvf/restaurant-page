@@ -1,4 +1,5 @@
-import img from '/home/jefferson/top/restaurant-page/img/food.jpeg'
+import img from './img/food.jpeg';
+import css from './styles.css';
 
 function addImage(element) {
     const image = document.createElement('img');
@@ -10,7 +11,6 @@ function addImage(element) {
 function addHeadline(element){
     const headline = document.createElement('h1');
     headline.textContent = 'Wonderful restaurant';
-    headline.style.color = 'white';
 
     element.appendChild(headline);
 }
