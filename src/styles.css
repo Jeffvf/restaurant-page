@@ -1,5 +1,18 @@
-#content{
+*{
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#content {
     display:grid;
     grid-template-columns: repeat(2, 1fr);
-    align-items: center;
+}
+
+.description {
+    display:flex;
+    flex-direction: column;
+    background-color: rgb(221, 221, 221);
+    align-self: stretch;
+    justify-self: stretch;
+    justify-content: center;
+    padding: 30px;
 }
