@@ -1,8 +1,8 @@
-import {loadHome} from './home-loading.js'
+import {homePage} from './home-loading.js'
 import {menu} from './menu-loading.js'
 import css from './styles.css'
 
-const MainPage = (() => {
+const mainPage = (() => {
     const content = document.getElementById('content');
 
     function createHeader(){
@@ -40,7 +40,7 @@ const MainPage = (() => {
         }
 
         if(tabName == 'Home'){
-            content.appendChild(loadHome());
+            content.appendChild(homePage.loadHome());
         }
         else if(tabName == 'Menu'){
             content.appendChild(menu.showMenu());
@@ -69,7 +69,7 @@ const MainPage = (() => {
         createTab(header, 'Menu');
         createTab(header, 'Info');
 
-        content.appendChild(loadHome());
+        content.appendChild(homePage.loadHome());
 
         tabbedBrowsing();
     }
@@ -77,5 +77,5 @@ const MainPage = (() => {
     return {loadPage};
 })();
 
-MainPage.loadPage();
+mainPage.loadPage();
 
