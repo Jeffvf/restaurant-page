@@ -1,4 +1,5 @@
 import {loadHome} from './home-loading.js'
+import {menu} from './menu-loading.js'
 import css from './styles.css'
 
 const content = document.getElementById('content');
@@ -44,7 +45,7 @@ function loadModule(tab){
         content.appendChild(loadHome());
     }
     else if(tabName == 'Menu'){
-        
+        content.appendChild(menu.showMenu());
     }
     else{
 
