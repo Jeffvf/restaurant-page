@@ -34,7 +34,7 @@ function addDescription(container){
     container.appendChild(description);
 }
 
-function loadElements(){
+function loadHome(){
     const container = createContainer('description');
     addImage(container);
     addDescription(container);
@@ -42,4 +42,4 @@ function loadElements(){
     return container
 }
 
-export {loadElements}
+export {loadHome}

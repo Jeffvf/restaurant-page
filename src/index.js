@@ -1,4 +1,4 @@
-import {loadElements} from './page-loading.js'
+import {loadHome} from './home-loading.js'
 import css from './styles.css'
 
 const content = document.getElementById('content');
@@ -41,7 +41,7 @@ function loadModule(tab){
     }
 
     if(tabName == 'Home'){
-        content.appendChild(loadElements());
+        content.appendChild(loadHome());
     }
     else if(tabName == 'Menu'){
         
@@ -70,7 +70,7 @@ function loadPage(){
     createTab(header, 'Menu');
     createTab(header, 'Info');
 
-    content.appendChild(loadElements());
+    content.appendChild(loadHome());
 
     tabbedBrowsing();
 }
