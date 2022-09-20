@@ -36,12 +36,18 @@ function createTab(header, name){
 function loadModule(tab){
     const tabName = tab.innerText;
 
-    if(tabName == 'Home'){
-        loadElements();
+    if(content.children.length > 1){
+        content.removeChild(content.lastChild);
     }
 
+    if(tabName == 'Home'){
+        content.appendChild(loadElements());
+    }
+    else if(tabName == 'Menu'){
+        
+    }
     else{
-        console.log('ok')
+
     }
 }
 
@@ -64,9 +70,10 @@ function loadPage(){
     createTab(header, 'Menu');
     createTab(header, 'Info');
 
+    content.appendChild(loadElements());
+
     tabbedBrowsing();
 }
 
 loadPage();
-loadElements();
 

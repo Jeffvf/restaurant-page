@@ -3,21 +3,19 @@ import css from './styles.css';
 
 const content = document.getElementById('content');
 
-function addImage() {
+function addImage(container) {
     const image = document.createElement('img');
     image.src = img;
     image.style.width = '100%';
     image.style.height = '100%';
 
-    content.appendChild(image);
+    container.appendChild(image);
 }
 
 function createContainer(className){
     const container = document.createElement('div');
 
     container.classList.add(className);
-
-    content.appendChild(container);
 
     return container;
 }
@@ -29,17 +27,19 @@ function addHeadline(element){
     element.appendChild(headline);
 }
 
-function addDescription(){
-    const container = createContainer('description');
+function addDescription(container){
     addHeadline(container);
     const description = document.createTextNode('This is the most wonderful restaurant ever!');
-
+    
     container.appendChild(description);
 }
 
 function loadElements(){
-    addImage();
-    addDescription();
+    const container = createContainer('description');
+    addImage(container);
+    addDescription(container);
+
+    return container
 }
 
 export {loadElements}
