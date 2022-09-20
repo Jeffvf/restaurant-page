@@ -33,6 +33,28 @@ function createTab(header, name){
     header.appendChild(tab);
 }
 
+function loadModule(tab){
+    const tabName = tab.innerText;
+
+    if(tabName == 'Home'){
+        loadElements();
+    }
+
+    else{
+        console.log('ok')
+    }
+}
+
+function tabbedBrowsing(){
+    const tabs = document.getElementsByClassName('tab');
+
+    Array.from(tabs).forEach(tab => {
+        tab.addEventListener('click', () => {
+            loadModule(tab);
+        });
+    });
+}
+
 function loadPage(){
     const header = createHeader();
 
@@ -41,7 +63,10 @@ function loadPage(){
     createTab(header, 'Home');
     createTab(header, 'Menu');
     createTab(header, 'Info');
+
+    tabbedBrowsing();
 }
 
 loadPage();
+loadElements();
 
