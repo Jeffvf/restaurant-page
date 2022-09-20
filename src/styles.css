@@ -1,10 +1,31 @@
 *{
     font-family: 'Noto Sans', sans-serif;
+    background-color: black;
+    color: white;
 }
 
-#content {
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
+.header {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.title {
+    margin-right: 30%;
+    color: yellow;
+}
+
+.tab {
+    padding: 15px;
+    font-weight: bold;
+    align-self: center;
+}
+
+.tab:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 20px;
 }
 
 .description {
