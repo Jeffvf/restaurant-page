@@ -1,8 +1,6 @@
 import img from './img/food.jpeg';
 import css from './styles.css';
 
-const content = document.getElementById('content');
-
 function addImage(container) {
     const image = document.createElement('img');
     image.src = img;
