@@ -4,6 +4,7 @@ import css from './styles.css'
 
 const mainPage = (() => {
     const content = document.getElementById('content');
+    let currentTab = 'Home';
 
     function createHeader(){
         const header = document.createElement('header');
@@ -35,19 +36,26 @@ const mainPage = (() => {
     function loadModule(tab){
         const tabName = tab.innerText;
 
+        if (tabName == currentTab){
+            return;
+        }
+        
         if(content.children.length > 1){
             content.removeChild(content.lastChild);
+
+            if(tabName == 'Home'){
+                content.appendChild(homePage.loadHome());
+            }
+            else if(tabName == 'Menu'){
+                content.appendChild(menu.showMenu());
+            }
+            else{
+                
+            }
+            currentTab = tabName;
+            console.log(currentTab)
         }
 
-        if(tabName == 'Home'){
-            content.appendChild(homePage.loadHome());
-        }
-        else if(tabName == 'Menu'){
-            content.appendChild(menu.showMenu());
-        }
-        else{
-
-        }
     }
 
     function tabbedBrowsing(){
