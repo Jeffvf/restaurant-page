@@ -53,7 +53,6 @@ const mainPage = (() => {
                 
             }
             currentTab = tabName;
-            console.log(currentTab)
         }
 
     }
