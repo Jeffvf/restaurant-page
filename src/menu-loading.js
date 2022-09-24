@@ -6,8 +6,8 @@ const menu = (() => {
         return {name, ingredients, price};
     }
 
-    const Drink = (name, ingredients, isAlcoholic, price) => {
-        return {name, ingredients, isAlcoholic, price};
+    const Drink = (name, ingredients, price) => {
+        return {name, ingredients, price};
     }
 
     const createDish = (name, ingredients, price) => {
@@ -34,13 +34,32 @@ const menu = (() => {
         const dishes = document.createElement('div');
         
         dishes.classList.add('dishes');
-        
+
         dishesList.forEach((dish) => {
             const dishCard = document.createElement('div');
+            dishCard.classList.add('card');
 
-            dishCard.innerHTML = `<h1>${dish.name}</h1>`;
-            dishCard.innerHTML += `<p>${dish.ingredients}</p>`;
-            dishCard.innerHTML += `<p>${dish.price}</p>`;
+            const type = document.createElement('div');
+            type.classList.add('dish');
+
+            const description = document.createElement('div');
+            description.classList.add('menu-description');
+
+            const title = document.createElement('h1');
+            title.textContent = `${dish.name}`;
+
+            const ingredients = document.createElement('p');
+            ingredients.textContent += `${dish.ingredients}`;
+
+            const price = document.createElement('p');
+            price.textContent += `${dish.price}`;
+
+            description.appendChild(title);
+            description.appendChild(ingredients);
+            description.appendChild(price);
+
+            dishCard.appendChild(type);
+            dishCard.appendChild(description);
 
             dishes.appendChild(dishCard);
         });
@@ -55,11 +74,30 @@ const menu = (() => {
 
         drinksList.forEach((drink) => {
             const drinkCard = document.createElement('div');
+            drinkCard.classList.add('card');
 
-            drinkCard.innerHTML = `<h1>${drink.name}</h1>`;
-            drinkCard.innerHTML += `<p>${drink.ingredients}</p>`;
-            drinkCard.innerHTML += `<p>${drink.price}</p>`;
+            const type = document.createElement('div');
+            type.classList.add('drink');
 
+            const description = document.createElement('div');
+            description.classList.add('menu-description');
+
+            const title = document.createElement('h1');
+            title.textContent = `${drink.name}`;
+
+            const ingredients = document.createElement('p');
+            ingredients.textContent += `${drink.ingredients}`;
+
+            const price = document.createElement('p');
+            price.textContent += `${drink.price}`;
+
+            description.appendChild(title);
+            description.appendChild(ingredients);
+            description.appendChild(price);
+
+            drinkCard.appendChild(type);
+            drinkCard.appendChild(description);
+            
             drinks.appendChild(drinkCard);
         });
 
