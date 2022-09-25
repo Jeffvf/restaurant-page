@@ -11,10 +11,17 @@ const info = (() => {
     }
 
     const addAboutInfo = () =>{
+        const aboutDiv = document.createElement('div');
+        const title = document.createElement('h1');
         const about = document.createElement('p');
+
+        title.textContent = 'About us:';
         about.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati iure voluptates illo, iusto neque provident, soluta rerum aspernatur dolorem architecto hic deleniti tempore harum ut blanditiis atque expedita fuga consequatur!';
 
-        return about;
+        aboutDiv.appendChild(title);
+        aboutDiv.appendChild(about);
+
+        return aboutDiv;
     }
 
     const setPhoneNumbers = (phoneNumbers) => {
@@ -23,7 +30,12 @@ const info = (() => {
 
     const addPhoneNumbers = () => {
         const phoneNumbers = document.createElement('div');
+        const title = document.createElement('h1');
+
+        title.textContent = 'Phone Number:';
         
+        phoneNumbers.appendChild(title);
+
         for(let i = 0; i < restaurantPhoneNumbers.length; i++){
             const phoneNumber = document.createElement('p');
 
@@ -40,11 +52,17 @@ const info = (() => {
     }
 
     const addAddressInfo = () => {
+        const addressDiv = document.createElement('div');
+        const title = document.createElement('h1');
         const address = document.createElement('p');
 
+        title.textContent = 'Address:';
         address.textContent = restaurantAddress;
 
-        return address;
+        addressDiv.appendChild(title);
+        addressDiv.appendChild(address);
+
+        return addressDiv;
     }
 
     const setInfo = (address, phoneNumbers) => {
@@ -74,9 +92,9 @@ const info = (() => {
         if(restaurantAddress == ''){
             pageInit();
         }
+
         const contentBody = createContentBody();
         const info = getInfo();
-
 
         for(let i = 0; i < info.length; i++){
             contentBody.appendChild(info[i]);
@@ -85,7 +103,7 @@ const info = (() => {
         return contentBody;
     }
 
-    return {pageInit, displayInfo};
+    return {displayInfo};
 })();
 
 export {info};
