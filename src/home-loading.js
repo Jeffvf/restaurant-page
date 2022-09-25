@@ -1,4 +1,3 @@
-import img from './img/food.jpeg';
 import css from './styles.css';
 
 const homePage = (() => {
