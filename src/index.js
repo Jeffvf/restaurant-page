@@ -1,5 +1,6 @@
 import {homePage} from './home-loading.js'
 import {menu} from './menu-loading.js'
+import {info} from './info-loading.js'
 import css from './styles.css'
 
 const mainPage = (() => {
@@ -50,7 +51,7 @@ const mainPage = (() => {
                 content.appendChild(menu.showMenu());
             }
             else{
-                
+                content.appendChild(info.displayInfo());
             }
             currentTab = tabName;
         }
