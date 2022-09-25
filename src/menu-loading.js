@@ -108,7 +108,9 @@ const menu = (() => {
         const menu = document.createElement('div');
         menu.id = 'menu';
 
-        createMenu();
+        if(dishesList.length == 0 && drinksList == 0){
+            createMenu();
+        }
         showDishes(menu);
         showDrinks(menu);
 
